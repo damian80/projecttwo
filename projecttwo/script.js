@@ -7,3 +7,18 @@ const hexBtn = document.querySelector('.hexBtn');
 const bodyBgc = document.querySelector('body');
 // let select span
 const hex = document.querySelector('.hex');
+
+hexBtn.addEventListener('click',getHex);
+
+function getHex(){
+    let hexCol = "#";
+
+for(let i = 0; i<6; i++){
+    let random = Math.floor(Math.random()*hexNumbers.length);
+    hexCol += hexNumbers[random];
+}
+
+bodyBgc.style.backgroundColor = hexCol;
+hex.innerHTML = hexCol;
+
+}
